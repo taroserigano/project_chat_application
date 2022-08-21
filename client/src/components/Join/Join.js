@@ -17,7 +17,8 @@ export default function SignIn() {
         <div>
           <input placeholder="Room" className="joinInput mt-20" type="text" onChange={(event) => setRoom(event.target.value)} />
         </div>
-        <Link onClick={e => (!name || !room) ? e.preventDefault() : null} to={`/chat?name=${name}&room=${room}`}>
+        <Link onClick={e => (!name || !room) ? e.preventDefault() : null}  // all this does is, if no name nor room filled out, it won't accept button pushed
+        to={`/chat?name=${name}&room=${room}`}>                            // because that can break the app, if there's room name, don't do aanything return null
           <button className={'button mt-20'} type="submit">Sign In</button>
         </Link>
       </div>
